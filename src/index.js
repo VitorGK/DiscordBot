@@ -46,9 +46,9 @@ client.on('interactionCreate', async interaction => {
   }
 });
 
-client.on('message', async message => {
+client.on('message', message => {
   if (message.content === '!help') {
-    await message.reply('AJUDA');
+    message.channel.send("AJUDA");
   }
 });
 
