@@ -1,8 +1,8 @@
 {
-  "name": "sophia",
+  "name": "DiscordBot",
   "version": "1.0.0",
   "description": "My first Discord bot",
-  "main": "src/index.js",
+  "main": "./index.js",
   "scripts": {
     "start": "node .",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -10,8 +10,10 @@
   "author": "Vitor Grechi Kuninari",
   "license": "MIT",
   "dependencies": {
+    "@discordjs/builders": "^0.12.0",
     "@discordjs/rest": "^0.3.0",
     "discord-api-types": "^0.27.0",
-    "discord.js": "^13.6.0"
+    "discord.js": "^13.6.0",
+    "dotenv": "^16.0.0"
   }
 }
