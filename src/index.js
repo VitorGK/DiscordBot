@@ -6,15 +6,18 @@ const { REST } = require('@discordjs/rest');
 const { Routes } = require('discord-api-types/v9');
 const { Client, Intents } = require('discord.js');
 
-const commands = [{
-  name: 'ping',
-  description: 'Replies with Pong!'
-}]; 
+const commands = [
+  {
+    name: 'ping',
+    description: 'Replies with Pong!'
+  }
+]; 
 
 const rest = new REST({ version: '9' }).setToken(TOKEN);
 
 const client = new Client({ intents: [Intents.FLAGS.GUILDS] });
 
+// SLASH COMMANDS DEFINITION
 (async () => {
   try {
     console.log('Started refreshing application (/) commands.');
@@ -40,6 +43,12 @@ client.on('interactionCreate', async interaction => {
 
   if (interaction.commandName === 'ping') {
     await interaction.reply('Pong!');
+  }
+});
+
+client.on('message', async message => {
+  if (message.content === '!help') {
+    await message.reply('AJUDA');
   }
 });
 
