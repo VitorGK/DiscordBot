@@ -1,2 +1,2 @@
-# SophIA
+# DiscordBot
  My first Discord bot
