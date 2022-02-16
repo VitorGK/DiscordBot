@@ -1,7 +1,7 @@
 {
-  "name": "DiscordBot",
+  "name": "AIDA",
   "version": "1.0.0",
-  "description": "My first Discord bot",
+  "description": "Your AI Discord Assistant",
   "main": "./index.js",
   "scripts": {
     "start": "node .",
