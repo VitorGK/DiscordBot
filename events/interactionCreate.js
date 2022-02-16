@@ -1,15 +1,15 @@
 module.exports = {
     name: 'interactionCreate',
-    execute(interaction) {
+    async execute(interaction) {
         if (!interaction.isCommand()) return;
 
-        const command = client.commands.get(interaction.commandName);
+        const command = interaction.client.commands.get(interaction.commandName);
 
         if (!command) return;
 
         try {
+            console.log(`${interaction.user.tag} in #${interaction.channel.name} triggered an interaction (${interaction.commandName}).`);
             await command.execute(interaction);
-            console.log(`${interaction.user.tag} in #${interaction.channel.name} triggered an interaction.`);
         } catch (error) {
             console.error(error);
             await interaction.reply({ content: 'There was an error while executing this command!', ephemeral: true });
